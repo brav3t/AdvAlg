@@ -35,7 +35,7 @@ float TravellingSalesmanProblem::objective(vector<Town> route) {
 	for (unsigned int ti = 0; ti < route.size() - 1; ti++) {
 		Town t1 = route[ti];
 		Town t2 = route[ti + 1];
-		sum_length += sqrt(pow(t1.x - t2.x, 2) + pow(t1.y - t2.y, 2));
+		sum_length += sqrt(pow(t1.x - t2.x, 2.f) + pow(t1.y - t2.y, 2.f));
 	}
 	return sum_length;
 }

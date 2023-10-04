@@ -25,10 +25,10 @@ float FunctionApproximation::objective(std::vector<float> coefficients) {
 	float sum_diff = 0;
 	for (auto valuepair : known_values) {
 		float x = valuepair.input;
-		float y = coefficients[0] * pow(x - coefficients[1], 3) +
-   			      coefficients[2] * pow(x - coefficients[3], 2) +
+		float y = coefficients[0] * pow(x - coefficients[1], 3.f) +
+   			      coefficients[2] * pow(x - coefficients[3], 2.f) +
 			      coefficients[4] * x;
-		float diff = (float)pow(y - valuepair.output, 2);
+		float diff = (float)pow(y - valuepair.output, 2.f);
 		sum_diff += diff;
 	}
 	return sum_diff;

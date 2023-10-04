@@ -51,6 +51,9 @@
     <ClInclude Include="ImageSegmentation.h">
       <Filter>Header Files\Problems</Filter>
     </ClInclude>
+    <ClInclude Include="HillClimbing.h">
+      <Filter>Header Files\Solvers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="ImageSegmentation.cpp">
       <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="HillClimbing.cpp">
+      <Filter>Source Files\Solvers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
