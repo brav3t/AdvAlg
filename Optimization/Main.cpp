@@ -3,8 +3,11 @@
 
 int main()
 {
-    HillClimbingStochasticSBP hillClimbSBP;
-    hillClimbSBP.initAndSolve();
+    SmallestBoundaryPolyWithHillClimbing SBPHillclimb;
+    SBPHillclimb.initAndSolve();
+
+    TravellingSalesmanWithGenetic TSGenetic;
+    TSGenetic.initAndSolve();
 
     return 0;
 }

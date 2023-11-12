@@ -39,5 +39,3 @@ float TravellingSalesmanProblem::objective(vector<Town> route) {
 	}
 	return sum_length;
 }
-
-

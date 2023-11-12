@@ -2,10 +2,11 @@
 
 #include "HillClimbing.h"
 
-void HillClimbingStochasticSBP::initAndSolve()
+void SmallestBoundaryPolyWithHillClimbing::initAndSolve()
 {
+    std::cout << "Solving the Smallest Boundary Polygon problem with the Hill Climbing method: \n";
     // Problem and solution space limits. Point coordinate limits.
-    Interval S = std::make_pair(.0f, 100.f);
+    ProblemSpaceSize S = std::make_pair(.0f, 100.f);
 
     // Create points in problem space that needs to be bounded.
     fillWithRandomPoints(mPoints, S, mSPointCount);
@@ -13,8 +14,8 @@ void HillClimbingStochasticSBP::initAndSolve()
     float epsilon = 10.f;
 
     // Distance function: create a new polygon from P polygon.
-    // Each new point of the new polygon is in epsilon radius but limited to S interval aka solution space.
-    auto distSFn = [](Polygon& aP, Interval& aS, float aEpsilon) -> Polygon {
+    // Each new point of the new polygon is in epsilon radius but limited to solution space.
+    auto distSFn = [](Polygon& aP, ProblemSpaceSize& aS, float aEpsilon) -> Polygon {
         Polygon q;
         float min, max;
         std::tie(min, max) = aS;
@@ -42,26 +43,27 @@ void HillClimbingStochasticSBP::initAndSolve()
 
     size_t stopCondition = 100; // iteration count
 
-    // Solution first: the algorithm found an acceptable solution.
+    // Solution first: the algorithm found is an acceptable solution.
     // Solution second: the most acceptable solution polygon.
     auto solution = solveSBP(S, distSFn, epsilon, fitnessFn, stopCondition);
+    printSolution(solution);
 }
 
-HillClimbingStochasticSBP::Solution HillClimbingStochasticSBP::solveSBP(
-    Interval aS,
+SmallestBoundaryPolyWithHillClimbing::Solution SmallestBoundaryPolyWithHillClimbing::solveSBP(
+    ProblemSpaceSize aS,
     DistSFn aDistS,
     float aEpsilon,
     FitnessFn aFitness,
     size_t aStopCond)
 {
     Polygon p;
-    fillWithRandomPoints(p, aS, mBoundingPolygonPointCount);
+    //fillWithRandomPoints(p, aS, mBoundingPolygonPointCount);
     // Not a random start, start from the problem space corners:
     // This is a worst case but working solution.
-    //p.emplace_back(0.f, 0.f);
-    //p.emplace_back(0.f, 100.f);
-    //p.emplace_back(100.f, 100.f);
-    //p.emplace_back(100.f, 0.f);
+    p.emplace_back(0.f, 0.f);
+    p.emplace_back(0.f, 100.f);
+    p.emplace_back(100.f, 100.f);
+    p.emplace_back(100.f, 0.f);
 
     for (size_t i = 0; i != aStopCond; ++i)
     {
@@ -76,7 +78,7 @@ HillClimbingStochasticSBP::Solution HillClimbingStochasticSBP::solveSBP(
     return solution;
 }
 
-void HillClimbingStochasticSBP::fillWithRandomPoints(Polygon& aPolygon, Interval& aInterval, size_t aPointCount)
+void SmallestBoundaryPolyWithHillClimbing::fillWithRandomPoints(Polygon& aPolygon, ProblemSpaceSize& aInterval, size_t aPointCount)
 {
     aPolygon.reserve(aPointCount);
     float min, max;
@@ -85,4 +87,20 @@ void HillClimbingStochasticSBP::fillWithRandomPoints(Polygon& aPolygon, Interval
     {
         aPolygon.emplace_back(randomUniform(min, max), randomUniform(min, max));
     }
+}
+
+void SmallestBoundaryPolyWithHillClimbing::printSolution(Solution& solution)
+{
+    bool isSolutionAcceptable = solution.first;
+    std::cout << "The found solution is accaptable = " << isSolutionAcceptable << "\n";
+    if (!isSolutionAcceptable)
+        return;
+
+    std::cout << "Solution polygon is = ";
+    auto& polygon = solution.second;
+    for (const auto& point : polygon)
+    {
+        std::cout << "( x = " << point.x << ", y = " << point.y << " ), ";
+    }
+    std::cout << "\n\n";
 }

@@ -14,6 +14,7 @@
 #include <utility>
 #include <functional>
 #include <optional>
+#include <algorithm>
 
 // TODO: reference additional headers your program requires here
 #include "../Utils/Random.h"
@@ -22,6 +23,8 @@
 
 // Problems
 #include "SmallestBoundaryPolygon.h"
+#include "TravellingSalesman.h"
 
 // Solvers
 #include "HillClimbing.h"
+#include "Genetic.h"

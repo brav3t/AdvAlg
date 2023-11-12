@@ -54,6 +54,9 @@
     <ClInclude Include="HillClimbing.h">
       <Filter>Header Files\Solvers</Filter>
     </ClInclude>
+    <ClInclude Include="Genetic.h">
+      <Filter>Header Files\Solvers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files\Problems</Filter>
     </ClCompile>
     <ClCompile Include="HillClimbing.cpp">
+      <Filter>Source Files\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="Genetic.cpp">
       <Filter>Source Files\Solvers</Filter>
     </ClCompile>
   </ItemGroup>
