@@ -16,9 +16,11 @@ protected:
 	void setPixCluster(int x, int y, unsigned int cluster);
 
 	std::vector<unsigned int> pix_cluster;
+
 public:
 	virtual void loadImageFromFile(std::string filename);
 	void savePixClusterToFile(std::string filename);
-	ImageSegmentation();
+	
+	ImageSegmentation() = default;
 	~ImageSegmentation();
 };

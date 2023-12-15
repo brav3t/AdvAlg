@@ -11,6 +11,7 @@ public:
 public:
 	void initAndSolve();
 
+private:
 	void createTowns(size_t numOfTowns);
 	Population initializePopulation(size_t numOfPopulation);
 	void evaluation(Population&);

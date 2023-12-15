@@ -89,13 +89,8 @@ void ImageSegmentation::savePixClusterToFile(std::string filename)
 	os.close();
 }
 
-ImageSegmentation::ImageSegmentation()
+ImageSegmentation::~ImageSegmentation()
 {
 	delete[] raw_grayscale;
 	delete[] raw_color;
-}
-
-
-ImageSegmentation::~ImageSegmentation()
-{
 }

@@ -2,6 +2,8 @@
 
 #include "HillClimbing.h"
 
+using Solution = SmallestBoundaryPolyWithHillClimbing::Solution;
+
 void SmallestBoundaryPolyWithHillClimbing::initAndSolve()
 {
     std::cout << "Solving the Smallest Boundary Polygon problem with the Hill Climbing method: \n";
@@ -49,7 +51,7 @@ void SmallestBoundaryPolyWithHillClimbing::initAndSolve()
     printSolution(solution);
 }
 
-SmallestBoundaryPolyWithHillClimbing::Solution SmallestBoundaryPolyWithHillClimbing::solveSBP(
+Solution SmallestBoundaryPolyWithHillClimbing::solveSBP(
     ProblemSpaceSize aS,
     DistSFn aDistS,
     float aEpsilon,

@@ -2,6 +2,7 @@
 
 class SmallestBoundaryPolyWithHillClimbing : public SmallestBoundaryPolygonProblem
 {
+public:
 	using Polygon = std::vector<Point>;
 	using ProblemSpaceSize = std::pair<float, float>;
 	using DistSFn = std::function<Polygon(Polygon&, ProblemSpaceSize&, float)>;
@@ -12,12 +13,7 @@ public:
 	void initAndSolve();
 
 private:
-	Solution solveSBP(
-		ProblemSpaceSize aS,
-		DistSFn,
-		float aEpsilon,
-		FitnessFn,
-		size_t aStopCond);
+	Solution solveSBP(ProblemSpaceSize aS, DistSFn, float aEpsilon, FitnessFn, size_t aStopCond);
 	void fillWithRandomPoints(Polygon&, ProblemSpaceSize&, size_t aPointCount);
 	void printSolution(Solution&);
 
