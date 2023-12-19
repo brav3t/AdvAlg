@@ -24,7 +24,9 @@
 // Problems
 #include "SmallestBoundaryPolygon.h"
 #include "TravellingSalesman.h"
+#include "FunctionApproximation.h"
 
 // Solvers
 #include "HillClimbing.h"
 #include "Genetic.h"
+#include "ParticleSwarmOptimalization.h"

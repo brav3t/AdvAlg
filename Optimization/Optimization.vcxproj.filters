@@ -57,6 +57,9 @@
     <ClInclude Include="Genetic.h">
       <Filter>Header Files\Solvers</Filter>
     </ClInclude>
+    <ClInclude Include="ParticleSwarmOptimalization.h">
+      <Filter>Header Files\Solvers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files\Solvers</Filter>
     </ClCompile>
     <ClCompile Include="Genetic.cpp">
+      <Filter>Source Files\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSwarmOptimalization.cpp">
       <Filter>Source Files\Solvers</Filter>
     </ClCompile>
   </ItemGroup>

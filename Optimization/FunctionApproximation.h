@@ -4,6 +4,14 @@
 class ValuePair
 {
 public:
+	ValuePair() = default;
+	ValuePair(float input_, float output_)
+		: input(input_)
+		, output(output_)
+	{
+	}
+
+public:
 	float input;
 	float output;
 };

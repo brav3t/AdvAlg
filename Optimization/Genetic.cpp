@@ -157,7 +157,7 @@ void TravellingSalesmanWithGenetic::initAndSolve()
 {
 	std::cout << "Solving the Travelling Salesman problem with Genetic algorithm. \n";
 
-	constexpr size_t POPULATION_SIZE = 100;
+	constexpr size_t POPULATION_SIZE = 1000;
 	constexpr size_t k = 2; // k random parent
 
 	createTowns(mNUM_OF_TOWNS);
