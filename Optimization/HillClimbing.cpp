@@ -6,7 +6,7 @@ using Solution = SmallestBoundaryPolyWithHillClimbing::Solution;
 
 void SmallestBoundaryPolyWithHillClimbing::initAndSolve()
 {
-    std::cout << "Solving the Smallest Boundary Polygon problem with the Hill Climbing method: \n";
+    std::cout << "Solving the Smallest Boundary Polygon problem with the Hill Climbing method..\n";
     // Problem and solution space limits. Point coordinate limits.
     ProblemSpaceSize S = std::make_pair(.0f, 100.f);
 
@@ -98,11 +98,11 @@ void SmallestBoundaryPolyWithHillClimbing::printSolution(Solution& solution)
     if (!isSolutionAcceptable)
         return;
 
-    std::cout << "Solution polygon is = ";
+    std::cout << "Solution polygon is =\n";
     auto& polygon = solution.second;
     for (const auto& point : polygon)
     {
-        std::cout << "( x = " << point.x << ", y = " << point.y << " ), ";
+        std::cout << "\t(x = " << point.x << "\t,y = " << point.y << "),\n";
     }
     std::cout << "\n\n";
 }

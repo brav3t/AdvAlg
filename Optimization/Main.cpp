@@ -2,11 +2,11 @@
 
 int main()
 {
-    //SmallestBoundaryPolyWithHillClimbing SBPHillclimb;
-    //SBPHillclimb.initAndSolve();
+    SmallestBoundaryPolyWithHillClimbing SBPHillclimb;
+    SBPHillclimb.initAndSolve();
 
-    //TravellingSalesmanWithGenetic TSGenetic;
-    //TSGenetic.initAndSolve();
+    TravellingSalesmanWithGenetic TSGenetic;
+    TSGenetic.initAndSolve();
 
     FunctionApproxWithParticleSwarmOpt FuncApproxPSO;
     FuncApproxPSO.initAndSolve();

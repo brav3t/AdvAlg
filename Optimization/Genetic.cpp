@@ -10,9 +10,7 @@ using Population = TravellingSalesmanWithGenetic::Population;
 void TravellingSalesmanWithGenetic::createTowns(size_t numOfTowns)
 {
 	for (size_t i = 0; i != numOfTowns; ++i)
-	{
 		towns.emplace_back(randomUniform(0.f, 100.f), randomUniform(0.f, 100.f));
-	}
 }
 
 Population TravellingSalesmanWithGenetic::initializePopulation(size_t numOfPopulation)
@@ -155,7 +153,7 @@ void TravellingSalesmanWithGenetic::printSolution(Individual& individual)
 
 void TravellingSalesmanWithGenetic::initAndSolve()
 {
-	std::cout << "Solving the Travelling Salesman problem with Genetic algorithm. \n";
+	std::cout << "Solving the Travelling Salesman problem with Genetic algorithm..\n";
 
 	constexpr size_t POPULATION_SIZE = 1000;
 	constexpr size_t k = 2; // k random parent
