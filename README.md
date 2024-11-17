@@ -1,6 +1,6 @@
 # Haladó algoritmusok
 
-### Legkisebb Egybefoglaló Poligon Hegymászó módszerrel megvalósítva
+### Legkisebb Egybefoglaló Poligon Hegymászó módszerrel megvalósítva (HillClimbing.h / HillClimbing.cpp)
 #### Probléma / Megoldás tér:
 - Pontok halmaza amelyek koordinátái a megadott 0.0 és 100.0 közötti intervallumban találhatóak.
 - Egy egybefoglaló _poligon_, amely négy ponttal rendelkezik. Pontjai a megadott intervallumban találhatóak.
@@ -9,7 +9,7 @@
 ```cpp
 void initAndSolve();
 ```
-Kezdő függvény, amelynek feladata a kezdő értékek beállítása, azaz a probléma tér intervallumának meghatározása és annak feltöltése véletlen koordinátákkal generált pontokkal.
+Kezdő függvény, amelynek feladata az induló értékek beállítása, azaz a probléma tér intervallumának meghatározása és annak feltöltése véletlen koordinátákkal generált pontokkal.
 Ebben a függvényben van leírva a _távolság függvény_ is, amely egy meglévő poligonból létrehoz egy új poligont úgy, hogy pontjait véletlenszerűen generálja egy epsilon értéken és a problématéren belül.
 Szintén itt van meghatározva a _fitnesz függvény_ is, amely a poligon térfogatát adja vissza.
 A _leállási feltétel_ egy egyszerű ciklus számláló.
@@ -35,7 +35,7 @@ Kiírja a megoldást, ha talált.
 #### Megjegyzések:
 A véletlenszerűen számolt élek az egybefoglaló poligonhoz nagyon sokszor nem tudtak érvényes megoldást adni, a kiinduló helyzet lesz választva, hogy a keresési tér négy sarkából indulva közelít a módszer. Így mindig van jó megoldás, csak a véletlennek köszönhető jóságukban térnek el.
 
-### Ütazó-ügynök probléma megoldása Genetikus programozással
+### Ütazó-ügynök probléma megoldása Genetikus programozással (Genetic.h / Genetic.cpp)
 #### Reprezentáció:
 Tíz darab város(Town) osztály. A városok x és y pozíciót tartalmaznak, amelyek véletlenszerűen generáltak. 
 #### Probléma tér:
@@ -108,7 +108,7 @@ void printSolution(Individual&);
 ```  
 Kiírja a végeredményt.
 
-### Függvény közelítés megoldása Raj alapú módszerrel
+### Függvény közelítés megoldása Raj alapú módszerrel (ParticleSwarmOptimalization.h / ParticleSwarmOptimalization.cpp)
 #### Reprezentáció:
 A lehetséges megoldások halmaza: populáció, mely véletlenszerűen generált egyedeket tartalmaz.
 Egy egyednek pozíciója, sebessége és lokális optimuma van. Ezekre az értékekre ötdimenziós vektorokként tekintünk, ami megfeleltethető a köbös polinomnak, amelyet a feladathoz mellékelt fitnesz számítási függvény is használ.
